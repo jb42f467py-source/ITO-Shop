@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ITO-Shop — une sélection de produits et d'offres de différentes marques, réunis au même endroit.">
+<title>ITO-Shop | Votre sélection shopping</title>
+<style>
+:root{
+  --black:#080808;
+  --black2:#111111;
+  --gold:#d4af37;
+  --gold2:#f1d675;
+  --white:#fff;
+  --muted:#b9b9b9;
+  --card:#151515;
+  --line:rgba(212,175,55,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(8,8,8,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px
+}
+.logo{
+  font-size:25px;font-weight:900;letter-spacing:3px;color:var(--gold)
+}
+.logo span{color:#fff}
+nav{display:flex;gap:28px;align-items:center}
+nav a{font-size:14px;color:#ddd;transition:.2s}
+nav a:hover{color:var(--gold)}
+.nav-btn{
+  padding:10px 17px;border:1px solid var(--gold);border-radius:7px;color:var(--gold)
+}
+
+/* HERO */
+.hero{
+  min-height:610px;display:flex;align-items:center;
+  background:
+    radial-gradient(circle at 78% 30%,rgba(212,175,55,.18),transparent 28%),
+    linear-gradient(120deg,#080808 45%,#17120a 100%);
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.badge{
+  display:inline-block;border:1px solid var(--line);color:var(--gold2);
+  padding:7px 13px;border-radius:30px;font-size:12px;letter-spacing:1.5px;
+  text-transform:uppercase;margin-bottom:22px
+}
+h1{font-size:clamp(42px,5vw,72px);line-height:1.03;letter-spacing:-2px;margin-bottom:22px}
+h1 em{font-style:normal;color:var(--gold)}
+.hero p{font-size:18px;color:#ccc;max-width:650px;margin-bottom:30px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 21px;border-radius:7px;font-weight:700;font-size:14px
+}
+.btn-gold{background:var(--gold);color:#080808}
+.btn-outline{border:1px solid #555;color:#fff}
+.hero-card{
+  border:1px solid var(--line);border-radius:18px;padding:28px;
+  background:linear-gradient(145deg,#171717,#0e0e0e);
+  box-shadow:0 25px 80px rgba(0,0,0,.45)
+}
+.hero-card .mini{color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.hero-card h2{font-size:30px;margin:10px 0}
+.hero-card p{font-size:15px;color:var(--muted);margin:0}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.stat{padding:15px;border:1px solid #292929;border-radius:10px;background:#101010}
+.stat strong{display:block;color:var(--gold);font-size:20px}
+.stat span{font-size:11px;color:#999}
+
+/* SECTIONS */
+section{padding:85px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+.kicker{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:2px}
+h2.section-title{font-size:36px;line-height:1.1;margin-top:8px}
+.section-head p{color:#aaa;max-width:480px;font-size:14px}
+
+/* CATEGORIES */
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.category{
+  min-height:135px;padding:23px;border:1px solid #242424;border-radius:12px;
+  background:var(--card);transition:.25s
+}
+.category:hover{transform:translateY(-4px);border-color:var(--gold)}
+.icon{font-size:25px;margin-bottom:13px}
+.category h3{font-size:16px;margin-bottom:5px}
+.category p{font-size:12px;color:#888}
+
+/* FEATURED */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{
+  overflow:hidden;border:1px solid #252525;border-radius:13px;background:var(--card)
+}
+.product-visual{
+  height:180px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1c1c1c,#0d0d0d);
+  font-size:48px
+}
+.product-body{padding:20px}
+.product-label{font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase}
+.product h3{font-size:19px;margin:7px 0}
+.product p{font-size:13px;color:#999;margin-bottom:16px}
+.product a{font-size:12px;color:var(--gold);font-weight:bold}
+
+/* HOW */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{padding:27px;border-left:2px solid var(--gold);background:#101010}
+.number{color:var(--gold);font-size:12px;font-weight:bold}
+.step h3{margin:8px 0;font-size:20px}
+.step p{color:#999;font-size:13px}
+
+/* CTA */
+.cta{
+  padding:55px;border:1px solid var(--line);border-radius:17px;
+  background:radial-gradient(circle at 85% 50%,rgba(212,175,55,.15),transparent 35%),#111
+}
+.cta h2{font-size:36px;margin-bottom:10px}
+.cta p{color:#aaa;max-width:680px;margin-bottom:23px}
+
+/* FOOTER */
+footer{border-top:1px solid #222;padding:35px 0;color:#777;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+
+/* MOBILE */
+@media(max-width:850px){
+  .hero{min-height:auto;padding:80px 0}
+  .hero-grid{grid-template-columns:1fr;gap:35px}
+  nav{display:none}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .products,.steps{grid-template-columns:1fr}
+  .section-head{display:block}
+  .section-head p{margin-top:15px}
+}
+@media(max-width:520px){
+  .categories{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:1fr}
+  .cta{padding:30px 22px}
+  .cta h2{font-size:28px}
+  section{padding:65px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">ITO<span>-SHOP</span></a>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#categories">Catégories</a>
+      <a href="#selection">Sélection</a>
+      <a href="#fonctionnement">Comment ça marche</a>
+      <a class="nav-btn" href="#contact">Découvrir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">Vitrine shopping indépendante</div>
+      <h1>Le shopping.<br><em>Simplement.</em></h1>
+      <p>ITO-Shop réunit une sélection de produits et d'offres de différentes marques au même endroit. Découvrez, comparez et accédez directement aux boutiques partenaires.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#selection">Voir la sélection</a>
+        <a class="btn btn-outline" href="#categories">Explorer les catégories</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="mini">ITO-SHOP</div>
+      <h2>Une vitrine, plusieurs possibilités.</h2>
+      <p>Nous sélectionnons des produits et vous redirigeons vers les boutiques partenaires pour effectuer votre achat.</p>
+      <div class="stat-row">
+        <div class="stat"><strong>01</strong><span>Découvrez</span></div>
+        <div class="stat"><strong>02</strong><span>Choisissez</span></div>
+        <div class="stat"><strong>03</strong><span>Achetez</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Explorer</div><h2 class="section-title">Nos catégories</h2></div>
+      <p>Une organisation claire pour trouver rapidement les produits qui vous intéressent.</p>
+    </div>
+    <div class="categories">
+      <a class="category" href="#selection"><div class="icon">⌁</div><h3>Électronique</h3><p>Tech, accessoires et équipements.</p></a>
+      <a class="category" href="#selection"><div class="icon">◇</div><h3>Mode</h3><p>Vêtements, chaussures et accessoires.</p></a>
+      <a class="category" href="#selection"><div class="icon">⌂</div><h3>Maison & Jardin</h3><p>Équipement et idées pour la maison.</p></a>
+      <a class="category" href="#selection"><div class="icon">◈</div><h3>Sport</h3><p>Matériel et accessoires sportifs.</p></a>
+      <a class="category" href="#selection"><div class="icon">✦</div><h3>Beauté & Bien-être</h3><p>Sélection beauté et bien-être.</p></a>
+      <a class="category" href="#selection"><div class="icon">▣</div><h3>Jeux & Jouets</h3><p>Idées pour petits et grands.</p></a>
+      <a class="category" href="#selection"><div class="icon">○</div><h3>Loisirs</h3><p>Produits pour vos passions.</p></a>
+      <a class="category" href="#selection"><div class="icon">+</div><h3>Accessoires</h3><p>Les petits essentiels du quotidien.</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="selection">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">À découvrir</div><h2 class="section-title">Sélection ITO-Shop</h2></div>
+      <p>Les produits présentés ici sont des exemples de mise en page. Les vrais liens affiliés pourront être ajoutés ensuite.</p>
+    </div>
+    <div class="products">
+      <article class="product">
+        <div class="product-visual">⌁</div>
+        <div class="product-body"><div class="product-label">Électronique</div><h3>Produits tech</h3><p>Découvrez une sélection d'appareils et d'accessoires.</p><a href="#contact">VOIR LES OFFRES →</a></div>
+      </article>
+      <article class="product">
+        <div class="product-visual">◇</div>
+        <div class="product-body"><div class="product-label">Mode</div><h3>Style & accessoires</h3><p>Une sélection tendance à retrouver chez nos partenaires.</p><a href="#contact">VOIR LES OFFRES →</a></div>
+      </article>
+      <article class="product">
+        <div class="product-visual">◈</div>
+        <div class="product-body"><div class="product-label">Sport</div><h3>Équipement sportif</h3><p>Découvrez du matériel et des accessoires pour vos activités.</p><a href="#contact">VOIR LES OFFRES →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="fonctionnement">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Le principe</div><h2 class="section-title">Comment ça marche ?</h2></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="number">01 — DÉCOUVREZ</div><h3>Parcourez</h3><p>Explorez les catégories et les produits proposés sur ITO-Shop.</p></div>
+      <div class="step"><div class="number">02 — CHOISISSEZ</div><h3>Sélectionnez</h3><p>Cliquez sur le produit ou l'offre qui vous intéresse.</p></div>
+      <div class="step"><div class="number">03 — ACHETEZ</div><h3>Accédez à la boutique</h3><p>Vous êtes redirigé vers le site du partenaire pour finaliser votre achat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="cta">
+      <div class="kicker">ITO-SHOP</div>
+      <h2>Une sélection shopping au même endroit.</h2>
+      <p>ITO-Shop est une vitrine en ligne. Certains liens peuvent être des liens affiliés : une commission peut être versée à ITO-Shop lorsqu'un achat est effectué via un lien partenaire, sans coût supplémentaire nécessairement pour l'acheteur.</p>
+      <a class="btn btn-gold" href="#selection">Explorer ITO-Shop</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 ITO-Shop. Tous droits réservés.</span>
+    <span>Vitrine de produits et offres partenaires.</span>
+  </div>
+</footer>
+</body>
+</html>
