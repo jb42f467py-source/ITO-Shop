@@ -6,7 +6,7 @@
 <title>ITO-Shop · Sneakers, foot et running en Suisse</title>
 <meta name="description" content="ITO-Shop sélectionne des sneakers, des crampons et des chaussures de running vendus en Suisse. Tu compares ici, tu achètes directement chez la boutique officielle.">
 <meta property="og:title" content="ITO-Shop · Sneakers, foot et running en Suisse">
-<meta property="og:description" content="Une sélection triée à la main, faite à Sion. Achat direct chez adidas CH et Gigasport CH.">
+<meta property="og:description" content="Une sélection triée à la main, faite à Sion. Achat direct chez adidas, INTERSPORT, SportScheck, On et d'autres boutiques officielles.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,7 +167,7 @@ footer.site .legal{margin-top:32px;padding-top:16px;border-top:1px solid #3a3f3c
         <dl>
           <dt>Origine</dt><dd>Sion, Valais</dd>
           <dt>Catégories</dt><dd>Lifestyle, foot, running</dd>
-          <dt>Boutiques</dt><dd>adidas CH, Gigasport CH</dd>
+          <dt>Boutiques</dt><dd>adidas, INTERSPORT, On, JD…</dd>
           <dt>Prix</dt><dd>En CHF, sur le site officiel</dd>
         </dl>
         <div class="bars"></div>
@@ -254,6 +254,31 @@ footer.site .legal{margin-top:32px;padding-top:16px;border-top:1px solid #3a3f3c
           <p>Spécialiste du sport : running (On, Brooks), textile et accessoires de plusieurs marques, dont Nike et Under Armour.</p>
           <a data-shop="gigasport" href="#" rel="sponsored noopener" target="_blank">Ouvrir gigasport.ch</a>
         </article>
+        <article class="shop">
+          <h3>INTERSPORT CH</h3>
+          <p>Le grand magasin de sport en Suisse : Nike, Puma, adidas, Asics, chaussures de foot et de running.</p>
+          <a data-shop="intersport" href="#" rel="sponsored noopener" target="_blank">Ouvrir intersport.ch</a>
+        </article>
+        <article class="shop">
+          <h3>SportScheck CH</h3>
+          <p>Sneakers et sport de grandes marques, dont Nike, New Balance et Puma, livrés en Suisse.</p>
+          <a data-shop="sportscheck" href="#" rel="sponsored noopener" target="_blank">Ouvrir sportscheck.ch</a>
+        </article>
+        <article class="shop">
+          <h3>On</h3>
+          <p>La marque de running suisse, sur son site officiel : Cloud, Cloudmonster et modèles imperméables.</p>
+          <a data-shop="on" href="#" rel="sponsored noopener" target="_blank">Ouvrir on.com</a>
+        </article>
+        <article class="shop">
+          <h3>Zalando Lounge</h3>
+          <p>Ventes privées de mode et de sneakers à prix réduits, pour une durée limitée.</p>
+          <a data-shop="zalando" href="#" rel="sponsored noopener" target="_blank">Ouvrir zalando-lounge.ch</a>
+        </article>
+        <article class="shop">
+          <h3>JD Sports</h3>
+          <p>Spécialiste sneakers et streetwear : Nike, Jordan, Puma et éditions exclusives.</p>
+          <a data-shop="jd" href="#" rel="sponsored noopener" target="_blank">Ouvrir jdsports.com</a>
+        </article>
       </div>
     </div>
   </section>
@@ -304,7 +329,12 @@ footer.site .legal{margin-top:32px;padding-top:16px;border-top:1px solid #3a3f3c
 const CONFIG = {
   shops: {
     adidas:    { name: "adidas CH",    url: "https://www.adidas.ch/fr", awin: "" },
-    gigasport: { name: "Gigasport CH", url: "https://www.gigasport.ch/", awin: "" }
+    gigasport: { name: "Gigasport CH", url: "https://www.gigasport.ch/", awin: "" },
+    intersport:{ name: "INTERSPORT CH", url: "https://www.intersport.ch/", awin: "" },
+    sportscheck:{ name: "SportScheck CH", url: "https://www.sportscheck.ch/", awin: "" },
+    on:        { name: "On",            url: "https://www.on.com/fr-ch/", awin: "" },
+    zalando:   { name: "Zalando Lounge", url: "https://www.zalando-lounge.ch/", awin: "" },
+    jd:        { name: "JD Sports",     url: "https://www.global.jdsports.com/", awin: "" }
   }
 };
 
@@ -329,12 +359,27 @@ const PRODUCTS = [
   { shop:"adidas", cat:"lifestyle", catLabel:"Lifestyle", brand:"adidas Originals", name:"Handball Spezial",
     why:"Semelle gomme, profil fin, look rétro. Taille un peu juste : vérifie le guide des tailles.",
     url:"https://www.adidas.ch/fr/search?q=handball%20spezial" },
+  { shop:"intersport", cat:"lifestyle", catLabel:"Lifestyle", brand:"Nike", name:"Air Force 1",
+    why:"Le classique tout blanc qui va avec tout. Taille plutôt grand : beaucoup prennent une demi-pointure en dessous.",
+    url:null },
+  { shop:"sportscheck", cat:"lifestyle", catLabel:"Lifestyle", brand:"New Balance", name:"530",
+    why:"Style running rétro, très confortable pour marcher toute la journée.",
+    url:null },
+  { shop:"jd", cat:"lifestyle", catLabel:"Lifestyle", brand:"Puma", name:"Speedcat",
+    why:"Profil bas et fin inspiré du sport auto, l'alternative à la Samba.",
+    url:null },
   { shop:"adidas", cat:"foot", catLabel:"Foot", brand:"adidas Football", name:"Predator",
     why:"Pour les joueurs qui veulent du toucher de balle et de la précision. Existe en FG, AG et pour juniors.",
     url:"https://www.adidas.ch/fr/search?q=predator" },
   { shop:"adidas", cat:"foot", catLabel:"Foot", brand:"adidas Football", name:"F50",
     why:"Légère et rapide, pensée pour les ailiers et les latéraux qui font des allers-retours.",
     url:"https://www.adidas.ch/fr/search?q=f50" },
+  { shop:"intersport", cat:"foot", catLabel:"Foot", brand:"Nike Football", name:"Mercurial",
+    why:"La chaussure des joueurs rapides, légère et près du pied. Disponible en FG, AG et pour juniors.",
+    url:null },
+  { shop:"on", cat:"running", catLabel:"Running", brand:"On", name:"Cloudmonster",
+    why:"Très amortie, pour les longues sorties. Directement sur le site de la marque suisse.",
+    url:null },
   { shop:"adidas", cat:"running", catLabel:"Running", brand:"adidas Running", name:"Ultraboost",
     why:"Très amortie, confortable pour les sorties tranquilles et les longues journées debout.",
     url:"https://www.adidas.ch/fr/search?q=ultraboost" },
